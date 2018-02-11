@@ -4,3 +4,4 @@
 
 ## Problems
 * [Reverse string](./exercises/reversestring/index.js)
+* [Palindrome](./exercises/palindrome/index.js)
