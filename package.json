@@ -1,0 +1,15 @@
+{
+  "name": "algocasts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "amcereijo <amcereijo@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^22.2.2",
+    "node": "^8.9.4"
+  }
+}
