@@ -7,3 +7,4 @@
 * [Palindrome](./exercises/palindrome/index.js)
 * [Reverse int](./exercises/reverseint/index.js)
 * [Max char](./exercises/maxchar/index.js)
+* [Fizzbuzz](./exercises/fizzbuzz/index.js)
