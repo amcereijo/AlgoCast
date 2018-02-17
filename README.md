@@ -9,3 +9,4 @@
 * [Max char](./exercises/maxchar/index.js)
 * [Fizzbuzz](./exercises/fizzbuzz/index.js)
 * [Chunk](./exercises/chunk/index.js)
+* [Anagrams](./exercises/anagrams/index.js)
