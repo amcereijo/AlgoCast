@@ -11,3 +11,4 @@
 * [Chunk](./exercises/chunk/index.js)
 * [Anagrams](./exercises/anagrams/index.js)
 * [String capitalize](./exercises/capitalize/index.js)
+* [Steps](./exercises/steps/index.js)
