@@ -12,3 +12,4 @@
 * [Anagrams](./exercises/anagrams/index.js)
 * [String capitalize](./exercises/capitalize/index.js)
 * [Steps](./exercises/steps/index.js)
+* [Pyramid](./exercises/pyramid/index.js)
