@@ -15,3 +15,4 @@
 * [Pyramid](./exercises/pyramid/index.js)
 * [Vowels](./exercises/vowels/index.js)
 * [Matrix](./exercises/matrix/index.js)
+* [Fib](./exercises/fib/index.js)
