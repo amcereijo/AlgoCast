@@ -16,3 +16,4 @@
 * [Vowels](./exercises/vowels/index.js)
 * [Matrix](./exercises/matrix/index.js)
 * [Fib](./exercises/fib/index.js)
+* [Queue](./exercises/queue/index.js)
