@@ -18,3 +18,4 @@
 * [Fib](./exercises/fib/index.js)
 * [Queue](./exercises/queue/index.js)
 * [Weave](./exercises/weave/index.js)
+* [Stack](./exercises/stack/index.js)
