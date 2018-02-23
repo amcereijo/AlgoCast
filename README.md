@@ -19,3 +19,4 @@
 * [Queue](./exercises/queue/index.js)
 * [Weave](./exercises/weave/index.js)
 * [Stack](./exercises/stack/index.js)
+* [Qfroms](./exercises/qfroms/index.js)
