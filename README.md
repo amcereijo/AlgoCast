@@ -17,3 +17,4 @@
 * [Matrix](./exercises/matrix/index.js)
 * [Fib](./exercises/fib/index.js)
 * [Queue](./exercises/queue/index.js)
+* [Weave](./exercises/weave/index.js)
