@@ -23,3 +23,4 @@
 * [Linkedlist](./exercises/linkedlist/index.js)
 * [Midpoint](./exercises/midpoint/index.js)
 * [Circular](./exercises/circular/index.js)
+* [Fromlast](./exercises/fromlast/index.js)
