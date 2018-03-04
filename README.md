@@ -22,3 +22,4 @@
 * [Qfroms](./exercises/qfroms/index.js)
 * [Linkedlist](./exercises/linkedlist/index.js)
 * [Midpoint](./exercises/midpoint/index.js)
+* [Circular](./exercises/circular/index.js)
