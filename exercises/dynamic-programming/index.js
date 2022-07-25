@@ -1,3 +1,9 @@
+/**
+ * Example of Dynamic Programming.
+ * Related article on https://amcereijo.medium.com/real-dynamic-programming-example-with-javascript-666d54c6edf4
+ */
+
+
 /* Record<string, number>* */
 const SERVICE_CPU_TIMES = {
   two: 2,
