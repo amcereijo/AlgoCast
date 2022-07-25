@@ -26,10 +26,15 @@ type Element = {
 };
 */
 
+// min CPU time to be as the starting point
 const MIN_CPU_TIME = Object.values(SERVICE_CPU_TIMES).reduce((min, cpuTime) => {
   return cpuTime < min ? cpuTime : min
 }, Number.MAX_SAFE_INTEGER);
 
+/**
+ * Utility method for creating an "empty" Element, needed when no value exists for a position
+ * @returns {Element}
+ */
 function getDefaultEmptyElement() {
   return { // Element
     totalBenefit: 0,
@@ -39,7 +44,7 @@ function getDefaultEmptyElement() {
 }
 
 /**
- *
+ * Sorting the transactions
  * @param {Transaction[]} transactions
  * @returns
  */
@@ -66,7 +71,7 @@ function sortTransactions(transactions) {
 }
 
 /**
- *
+ * Find a value in the previous row based in the actual one.
  * @param {Element[][]} map
  * @param {number} actualRow
  * @param {number} column
@@ -99,26 +104,35 @@ function getBestTransactions(transactions, totalCpuTime) {
   }
 
   /* Element[][] */
-  const map = [];
+  const map = []; // the matrix where we will store the calculated values
   /* Element */
-  let selectedElement;
+  let selectedElement; // the final selected element (the best one)
 
+  // we need to sort the transactions by  cpu time asc (in case of same cpu time by benefits asc)
   const sortedTransactions = sortTransactions(transactions);
   console.log('sortedTransactions', sortedTransactions);
 
+  // iterate all over the transactions
   for (let i = 0; i < sortedTransactions.length; i++) {
     const actualTransaction = sortedTransactions[i];
     const actualCpuTime = SERVICE_CPU_TIMES[actualTransaction.service];
     map[i] = [];
 
+    // for each transaction we will calculate the value for each cpu time (from the lowest to the value recevied as max)
     for (let j = MIN_CPU_TIME; j <= totalCpuTime; j++) {
       /* Element */
       let elementToAdd;
+
+      // the value for this cpu time (j) for the previous processed transaction(i)
       const upRowElement = getPreviousRowElement(map, i, j);
+
+      // the value for this cpu time subtracking the cpu time for the actual transaction (j - cputime) for the previous processed transaction(i)
       const upRowCpuTimeElement = getPreviousRowElement(map, i, j - actualCpuTime);
 
+      // the new total benefit (actual transaction + value in the previous row for the remainig cpu time)
       const newTotalBenefit = actualTransaction.benefit + upRowCpuTimeElement.totalBenefit;
 
+      // has more benefit and ok with the availble cpu time?
       if (upRowElement.totalBenefit > newTotalBenefit
         || (upRowCpuTimeElement.totalCpuTime + actualCpuTime > totalCpuTime)) {
           elementToAdd = upRowElement;
@@ -132,11 +146,13 @@ function getBestTransactions(transactions, totalCpuTime) {
 
       map[i][j] = elementToAdd;
 
+      // update the selected element when find other with more benefit
       if(!selectedElement || isMoreBenefitInEqualOrLessCpuTime(elementToAdd, selectedElement, totalCpuTime)) {
         selectedElement = elementToAdd;
       }
     }
   }
+
   console.log(selectedElement.totalBenefit, selectedElement.totalCpuTime)
   return selectedElement.list || [];
 }
